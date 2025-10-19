@@ -1,0 +1,111 @@
+/* 1. 全体と基本設定 */
+* {
+    /* 成長ポイント：box-sizing: border-box; */
+    /* paddingやborderをwidth/heightに含めるようにします。これにより、レイアウト崩れを防げます。 */
+    box-sizing: border-box;
+}
+
+body {
+    /* フォントを指定します。読みやすいサンセリフ体（ゴシック体）が一般的です。 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* ブラウザのデフォルトの余白を消します。 */
+    margin: 0;
+    /* わずかにグレーの背景色を設定 */
+    background-color: #f4f4f4; 
+    /* 見出しなどを中央に寄せるための設定 */
+    text-align: center;
+}
+
+/* 2. 見出しのデザイン */
+h1 {
+    padding: 20px 0;
+    margin: 0;
+    color: #8B4513; /* セピア色（茶色系）でラーメンらしさを演出 */
+    background-color: #fff8e1; /* クリーム色の背景 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 軽い影で立体感を出す */
+}
+
+/* 3. 地図エリア */
+/* #mapの高さはHTMLの<style>タグで設定済みですが、デザインをさらに加えます */
+#map {
+    /* 地図とギャラリーの境界線 */
+    border-bottom: 5px solid #333; 
+}
+
+/* 4. ギャラリーエリアのレイアウト（Flexbox） */
+#ramen-gallery {
+    /* 成長ポイント：Flexboxの宣言 */
+    /* 子要素（ラーメンカード）を柔軟に配置するためにFlexboxを有効にします。 */
+    display: flex; 
+    /* 画面幅が足りなくなったら、カードを次の行に自動で折り返します。 */
+    flex-wrap: wrap; 
+    /* カード間の縦横の隙間を20pxにします。 */
+    gap: 20px;
+    /* ギャラリー全体に上下左右の余白を加えます。 */
+    padding: 20px 10px;
+    background-color: white; 
+    /* カードをギャラリーの中央にまとめて配置します。 */
+    justify-content: center; 
+}
+
+/* 5. ラーメンカード（動的に生成される各情報ブロック）のデザイン */
+.ramen-card {
+    /* カードの横幅を統一 */
+    width: 300px; 
+    background-color: #fff;
+    /* 角を丸くします。 */
+    border-radius: 8px;
+    /* 角丸からはみ出す画像を隠します。 */
+    overflow: hidden; 
+    /* 影をつけ、カードが浮いているように見せます。 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* マウスカーソルを指の形にして、クリックできることを示します。 */
+    cursor: pointer; 
+    /* ホバー時の動きを滑らかにする設定 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px
+}
+
+/* 6. ホバー時のアニメーション */
+.ramen-card:hover {
+    /* 成長ポイント：transformプロパティ */
+    /* マウスが乗ったときに、カードを縦に8px持ち上げます。 */
+    transform: translateY(-8px); 
+    /* 影を濃くします。 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* 7. カード内の画像とテキスト */
+.ramen-card img {
+    width: 100%;
+    /* 画像の高さを固定し、見た目を統一します。 */
+    height: 100px; 
+    /* 成長ポイント：object-fit: cover; */
+    /* 画像の縦横比を保ちつつ、指定されたサイズ（180px）に収まるように画像を切り取ります。 */
+    object-fit: cover; 
+}
+
+.card-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    color: #d35400; /* 濃いオレンジ色（カボチャ色）をアクセントに */
+}
+
+.card-content button {
+    background-color: #e67e22; /* ボタンの背景色 */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.card-content button:hover {
+    background-color: #d35400;
+}

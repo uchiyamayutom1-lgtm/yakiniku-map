@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>焼肉マップ</title>
+    <link rel="stylesheet" href="ramen_style.css">
+
+    <style>
+       #map {
+            width: 100%;
+            height:40vh;
+        }
+    </style>
+</head>    
+
+<body>
+    <h1>焼肉マップ</h1>
+
+    <div id="map" style="height: 300px;"></div>
+
+<p id="gallery-status" style="padding: 10px; margin: 0; background-color: #fff;"></p>
+
+<div id="ramen-gallery">
+    </div>
+
+
+    <script src="script.js"></script>
+    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBTu8DRjfDNS2E8PAh1kRuIVmO8Pa9mtI&libraries=places&callback=initMap"></script>
+</body>
+</html>
